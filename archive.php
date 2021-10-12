@@ -1,6 +1,6 @@
 <?php
   get_header();
-test
+
        $args = array(
            'post_type'=>'Nagrody',
            'paged' => $paged,
