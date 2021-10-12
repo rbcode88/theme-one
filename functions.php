@@ -1,18 +1,25 @@
 <?php
 
-/**
- * Enqueue scripts and styles
- */
+function rbcode_register_styles() {
 
-function trophy_theme_one() {
-    // styles
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
-    wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.css', array() );
-    // scripts
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
-    wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
+    $version = wp_get_theme()->get( 'Version' );
+
+    wp_enqueue_style( 'rbcode-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(),'1.0', 'all' );
+    wp_enqueue_style( 'rbcode-theme-style', get_template_directory_uri() . '/style.css', array( 'rbcode-bootstrap' ), $version, 'all' );
+
  }
-add_action( 'wp_enqueue_scripts', 'trophy_theme_one' );
+add_action( 'wp_enqueue_scripts', 'rbcode_register_styles' );
+
+
+function rbcode_register_scripts() {
+
+  $version = wp_get_theme()->get( 'Version' );
+
+  wp_enqueue_script( 'rbcode-bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
+  wp_enqueue_script( 'rbcode-theme-script', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
+
+}
+add_action( 'wp_enqueue_scripts', 'rbcode_register_scripts' );
 
 
 add_theme_support('post-thumbnails');
