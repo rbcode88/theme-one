@@ -6,10 +6,10 @@ function rbcode_register_styles() {
 
     wp_enqueue_style( 'rbcode-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(),'1.0', 'all' );
     wp_enqueue_style( 'rbcode-theme-style', get_template_directory_uri() . '/style.css', array( 'rbcode-bootstrap' ), $version, 'all' );
+    wp_enqueue_style( 'rbcode-fontawasome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css', array(), '5.3.1', 'all' );
 
  }
 add_action( 'wp_enqueue_scripts', 'rbcode_register_styles' );
-
 
 function rbcode_register_scripts() {
 
