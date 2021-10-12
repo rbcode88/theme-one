@@ -211,4 +211,7 @@ button.btn-custom:hover {
     .main-menu-small-window {
         height:25%;
     }
+    .main-menu-small-window h2.window-text-center {
+        top:45%;
+    }
   }
