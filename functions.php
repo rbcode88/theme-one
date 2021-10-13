@@ -15,7 +15,7 @@ function rbcode_register_scripts() {
 
   $version = wp_get_theme()->get( 'Version' );
 
-  wp_enqueue_script( 'rbcode-bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
+  wp_enqueue_script( 'rbcode-bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '', true );
   wp_enqueue_script( 'rbcode-theme-script', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
 
 }
@@ -44,7 +44,7 @@ function rbcode_nagrody() {
             'has_archive' => true,
             'show_ui' => true,
             'menu_icon' => 'dashicons-star-filled',
-            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'post-formats'),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
             'rewrite' => array(
             'slug'  => 'nagrody'
             )

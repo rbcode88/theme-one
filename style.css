@@ -85,6 +85,7 @@ ul {
     border-top: none;
     position: relative;
     height: 50%;
+    text-align:center;
 }
 
 .main-menu-small-window h2.window-text-center {
