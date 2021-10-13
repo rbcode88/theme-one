@@ -2,13 +2,13 @@
 
 function rbcode_register_styles() {
 
-    $version = wp_get_theme()->get( 'Version' );
+  $version = wp_get_theme()->get( 'Version' );
 
-    wp_enqueue_style( 'rbcode-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(),'1.0', 'all' );
-    wp_enqueue_style( 'rbcode-theme-style', get_template_directory_uri() . '/style.css', array( 'rbcode-bootstrap' ), $version, 'all' );
-    wp_enqueue_style( 'rbcode-fontawasome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css', array(), '5.3.1', 'all' );
+  wp_enqueue_style( 'rbcode-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(),'1.0', 'all' );
+  wp_enqueue_style( 'rbcode-theme-style', get_template_directory_uri() . '/style.css', array( 'rbcode-bootstrap' ), $version, 'all' );
+  wp_enqueue_style( 'rbcode-fontawasome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css', array(), '5.3.1', 'all' );
 
- }
+}
 add_action( 'wp_enqueue_scripts', 'rbcode_register_styles' );
 
 function rbcode_register_scripts() {
@@ -26,7 +26,7 @@ add_theme_support('post-thumbnails');
 add_post_type_support( 'nagrody', 'thumbnail' );
 
 
-function nagrody() {
+function rbcode_nagrody() {
     register_post_type('nagrody',
         array(
             'labels'      => array(
@@ -35,29 +35,47 @@ function nagrody() {
                 'add_new' => __( 'Dodaj' ),
                 'add_new_item' => __( 'Dodaj nową nagrodę' )
                 ),
-            'taxonomies'  => array( 'Genre' ),
+            'taxonomies'  => array( 'Kategoria' ),
+            'label' => 'Gallery',
+    'supports' => array( 'title', 'excerpt' ),
+    'register_meta_box_cb' => 'my_meta_box_cb',
             'query_var' => true,
             'public'  => true,
             'has_archive' => true,
             'show_ui' => true,
             'menu_icon' => 'dashicons-star-filled',
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'post-formats'),
             'rewrite' => array(
             'slug'  => 'nagrody'
             )
         )
     );
 }
-add_action('init', 'nagrody');
+add_action('init', 'rbcode_nagrody');
 
-function trophy_category() {
-    register_taxonomy( 'Kategoria', 'nagrody', array(
-        'label'        => __( 'Kategoria', 'nagrody' ),
-        'rewrite'      => array( 'slug' => 'book-genre' ),
-        'show_admin_column' => true,
-        'hierarchical' => true,
-    ) );
+function rbcode_category() {
+  register_taxonomy( 'Kategoria', 'nagrody', array(
+      'label'        => __( 'Kategoria', 'nagrody' ),
+      'rewrite'      => array( 'slug' => 'kategoria' ),
+      'show_admin_column' => true,
+      'hierarchical' => true,
+  ) );
 }
-add_action( 'init', 'trophy_category', 0 );
+add_action( 'init', 'rbcode_category', 0 );
+
+//galeria którą można dodać na produkcie
+function my_meta_box_cb () {
+  add_meta_box( 'nagrody' . '_details' , 'Galeria produktu', 'my_meta_box_details', 'nagrody', 'normal', 'high' );
+}
+
+function my_meta_box_details () {
+  global $post;
+  $post_ID = $post->ID; // global used by get_upload_iframe_src
+  printf( "<iframe frameborder='0' src=' %s ' style='width: 100%%; height: 400px;'> </iframe>", get_upload_iframe_src('media') );
+}
+
+
+
 
 
 function most_recent_book_title() {

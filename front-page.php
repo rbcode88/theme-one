@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <div class="container-fluid p-0 image-main-menu">
-
     <div class="row m-0">
         <div class="col-lg-5 col-md-6 p-0 order-md-first order-last">
             <div class="hero d-flex justify-content-center flex-column align-items-center">
