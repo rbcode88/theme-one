@@ -33,6 +33,7 @@
                     </a>
                 </div>
                 
+                
                 <div class=" col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">TROFEA Z PLEKSY</h2>
