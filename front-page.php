@@ -17,7 +17,7 @@
         </div>
         <div class="col-lg-7 col-md-6 p-0 order-md-last order-first">
             <div class="row m-0 main-menu-part">
-                <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
+                <div class=" col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">DYPLOMY</h2>
                         <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
@@ -25,14 +25,16 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
+                <div class=" col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">SZKŁA</h2>
                         <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
                         <div class="image-nav image-2"></div>
                     </a>
                 </div>
-                <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
+                
+                
+                <div class=" col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">TROFEA Z PLEKSY</h2>
                         <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
@@ -40,7 +42,7 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
+                <div class=" col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">V-LINE CUSTOM</h2>
                         <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
