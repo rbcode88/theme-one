@@ -105,7 +105,9 @@ ul {
     left: 0;
     z-index:99;
     display:block;
-    margin: auto;
+    margin-left: auto; 
+    margin-right: auto; 
+    width:200px;
     color: #fff;
     border: 1px solid #e6005d;
     border-radius: 0;
@@ -138,7 +140,7 @@ button.btn-custom:hover {
 }
 
 .image-1 {
-    background-image: url("https://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/2021-10-11_12h07_51.jpg");
+    background-image: url("http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/2021-10-11_12h07_51.jpg");
 }
 
 .image-2 {

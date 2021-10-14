@@ -20,7 +20,7 @@
                 <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">DYPLOMY</h2>
-                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej</button>
+                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
                         <div class="image-nav image-1"></div>
                     </a>
                 </div>
@@ -28,14 +28,14 @@
                 <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">SZKŁA</h2>
-                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej ></button>
+                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
                         <div class="image-nav image-2"></div>
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">TROFEA Z PLEKSY</h2>
-                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej</button>
+                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
                         <div class="image-nav image-3"></div>
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="col-lg-6 col-md-12 p-0 main-menu-small-window">
                     <a href="#">
                         <h2 class="window-text-center">V-LINE CUSTOM</h2>
-                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej</button>
+                        <button type="button" class="btn btn-lg btn-custom">Zobacz więcej >></button>
                         <div class="image-nav image-4"></div>
                     </a>
                 </div>

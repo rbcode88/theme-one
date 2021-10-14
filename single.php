@@ -25,8 +25,18 @@ get_header();
     <!-- custom post type wywołanie ustawionej wartości-->
     <?php if(get_field('wymiary')) : ?> <h2> <?php the_field('wymiary'); ?> </h2> <?php endif; 
     
-    var_dump( get_attached_media( 'image' ));
+    $media = get_attached_media( '' );
+    print_r($media);
+
+    echo wp_get_attachment_image_src($image->ID,'full')[0];
     ?>
+
+<?php 
+$images = get_attached_media('image', $post->ID);
+foreach($images as $image) { ?>
+    <img src="<?php echo wp_get_attachment_image_src($image->ID,'full'); ?>" />
+<?php } ?>
+
 
 
   </div>
