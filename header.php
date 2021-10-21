@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <?php wp_head(); ?>
+  <head>
+
+    <?php wp_head(); ?>
         
-    </head>
+  </head>
 
-    <body <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
-<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid navbar-top">
+        <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+
+          <?php 
+           if(function_exists('the_custom_logo')){
+             $custom_logo_id = get_theme_mod('custom_logo');
+             $logo = wp_get_attachment_image_src($custom_logo_id);
+           }
+          ?>
+
+        <img class="img-fluid navbar-logo" src="<?php echo $logo[0]; ?>" alt="Tryumf logo">
+      </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

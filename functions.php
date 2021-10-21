@@ -22,8 +22,13 @@ function rbcode_register_scripts() {
 add_action( 'wp_enqueue_scripts', 'rbcode_register_scripts' );
 
 
-add_theme_support('post-thumbnails');
-add_post_type_support( 'nagrody', 'thumbnail' );
+function rbcode_theme_support(){
+  add_theme_support('post-thumbnails');
+  add_theme_support('custom-logo');
+  add_post_type_support( 'nagrody', 'thumbnail' );
+}
+
+add_action('after_setup_theme', 'rbcode_theme_support');
 
 
 function rbcode_nagrody() {
