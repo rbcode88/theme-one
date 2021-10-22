@@ -62,13 +62,106 @@ p,
 span,
 ul {
     font-family: "Raleway-Medium"!important;
-    font-size: 16px!important;
+    font-size: 16px;
     color:#777777;
 }
-
 /***************
- TOOGLE MENU
+ TOP BAR INFO
  ***************/
+.top-bar-info{
+    width:100%;
+    background-color: #e6005d;
+    padding:0;
+    margin:0;
+}
+.top-bar-info ul{
+    margin-bottom:0;
+    padding:5px 0;
+}
+.top-bar-info ul li{
+    color:#fff;
+    font-weight: 900;
+    font-size: 0.8em;
+    display: inline-block;
+    list-style-type: none;
+    padding:2px 15px;
+    border-right:1px solid #fff;
+}
+
+.top-bar-info ul li:last-child {
+    border:none;
+}
+
+img.top-bar-icon{
+    width:20px;
+    margin-right:10px;
+}
+/***************
+ TOP MENU
+ ***************/
+nav, #logo {
+    transition: 1s;
+}
+
+nav.white {
+    background: #fff;
+}
+.navigation {
+    height: 35px;
+}
+nav.navbar {
+    padding:30px 0px;
+    margin-top:34px;
+}
+nav.nav-shrink {
+    padding:10px 0px;
+}
+
+.navbar-img-logo {
+    margin-left:50px;
+}
+
+.img-logo {
+    width:80px;
+}
+
+nav ul li.menu-item a {
+    color:#777777;
+    font-weight: 900;
+    position:relative;
+}
+
+nav ul li.menu-item a:hover {
+    color:#333333;
+}
+
+/* stroke */
+  nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all .5s;
+  }
+
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #e6005d;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+
 
 /***************
   HERO SECTION
@@ -222,3 +315,9 @@ button.btn-custom:hover {
         top:45%;
     }
   }
+
+
+
+
+
+  /* */

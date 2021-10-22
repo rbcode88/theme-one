@@ -17,6 +17,7 @@ function rbcode_register_scripts() {
 
   wp_enqueue_script( 'rbcode-bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array(), '', true );
   wp_enqueue_script( 'rbcode-theme-script', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
+  wp_enqueue_script( 'rbcode-jquery-script', 'https://code.jquery.com/jquery-3.6.0.min.js', array('jquery'), '', false );
 
 }
 add_action( 'wp_enqueue_scripts', 'rbcode_register_scripts' );
@@ -171,6 +172,98 @@ function rbcode_menus(){
 }
 
 add_action('init','rbcode_menus');
+
+
+// Info bar above main menu
+class Rbcode_TopBar {
+  public static function register ( $wp_customize ) {
+    $wp_customize->add_section('top-bar-info', 
+    array(
+         'title'      => __( 'Top info bar', 'theme-one' ),
+         'priority'   => 30,
+    ));
+
+    $wp_customize->add_setting('rbcode_topbar_bgcolor',
+                array(
+                    'default' => apply_filters( 'rbcode_topbar_bgcolor', '#5b5b5b' ),
+                    'sanitize_callback' => 'sanitize_hex_color', // this will return a color picker in Admin Dashboard
+                    'type'           => 'option', // Options are 'option' & 'theme_mod' default - theme_mod
+                ));
+    $wp_customize->add_setting( 'rbcode_topbar_textcolor', array(
+                  'default' => apply_filters( 'rbcode_topbar_textcolor', '#5b5b5b' ),
+                  'sanitize_callback' => 'sanitize_hex_color',
+                  'type'           => 'option',
+              ));
+    $wp_customize->add_setting('rbcode_info_bar_phone', array(
+              'default'        => '+48',
+              'capability'     => 'edit_theme_options',
+              'type'           => 'option',
+          ));
+    $wp_customize->add_setting('rbcode_contact_email', array(
+                  'default'        => 'info@domain.com',
+                  'capability'     => 'edit_theme_options',
+                  'type'           => 'option',
+              ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'rbcode_topbar_bgcolor',
+                  array(
+                      'label'      => __( 'Kolor tła', 'theme-one' ),
+                      'section'    => 'top-bar-info',
+                      'settings'   => 'rbcode_topbar_bgcolor',
+                  ) ));
+    $wp_customize->add_control(
+      new WP_Customize_Color_Control(
+        $wp_customize,
+        'rbcode_topbar_bgcolor',
+          array(
+            'label'      => __( 'Kolor tła', 'theme-one' ),
+            'section'    => 'top-bar-info', //section_id
+            'settings'   => 'rbcode_topbar_bgcolor', //setting_id
+         ) ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'rbcode_topbar_textcolor',
+         array(
+             'label'      => __( 'Kolor czcionki', 'theme-one' ),
+             'section'    => 'top-bar-info',
+             'settings'   => 'rbcode_topbar_textcolor',
+         ) ) );
+    $wp_customize->add_control(
+     new WP_Customize_Color_Control($wp_customize,'rbcode_info_bar_phone',
+         array(
+             'label'      => __('Telefon', 'theme-one'),
+             'section'    => 'top-bar-info',
+             'settings'   => 'rbcode_info_bar_phone',
+             'priority'   => 10,
+             'type'       => 'text'
+         )) ); 
+ $wp_customize->add_control(
+     new WP_Customize_Color_Control($wp_customize,'rbcode_contact_mail',
+         array(
+             'label'      => __('E-mail', 'theme-one'),
+             'section'    => 'top-bar-info',
+             'settings'   => 'rbcode_contact_mail',
+             'priority'   => 10,
+             'type'       => 'text'
+         ))       );           
+  }
+
+
+public static function inject_css()
+{
+    $background = get_option('rbcode_topbar_bgcolor');
+    $textcolor = get_option('rbcode_topbar_textcolor');
+    ?><style>
+        .top-bar-info{ background:<?php echo $background;?>; color:<?php echo $textcolor;?>;}
+    </style><?php  
+}
+public static function top_bar_html( $wp_customize ){       
+    $phone = get_option('rbcode_info_bar_phone');?>
+    <li><?php echo $phone;?></li>           
+<?php }
+}
+
+add_action( 'customize_register' , array( 'Rbcode_TopBar' , 'register' ) );
+add_action('wp_head',array( 'Rbcode_TopBar' , 'inject_css' ));
+add_action('rbcode_before_header', array( 'Rbcode_TopBar' , 'top_bar_html' ));
 
 
 

@@ -3,14 +3,25 @@
   <head>
 
     <?php wp_head(); ?>
-        
+
   </head>
 
 <body <?php body_class(); ?>>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid navbar-top">
-        <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+<div class="container-fluid mx-lg-0 px-0 ">
+
+<div class="sticky-lg-top text-center top-bar-info">
+  <ul>
+  <?php do_action( 'rbcode_before_header' ); ?><!--Top bar info -->
+    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Szybka-realizacja-biala.png" class="top-bar-icon" alt="Ikona ">EKSPRESOWA REALIZACJA</li>
+    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Indywidualny-projekt-biala.png" class="top-bar-icon" alt="Ikona ">DEDYKOWANY PROJEKT</li>
+    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Fachowo-obsluga-klienta-biala.png" class="top-bar-icon" alt="Ikona ">FACHOWA POMOC I DORADZTWO</li>
+  </ul>
+</div>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">
+    <div class="container-fluid navigation">
+        <a class="navbar-brand navbar-img-logo" href="<?php echo get_home_url(); ?>">
 
           <?php 
            if(function_exists('the_custom_logo')){
@@ -19,7 +30,7 @@
            }
           ?>
 
-        <img class="img-fluid navbar-logo" src="<?php echo $logo[0]; ?>" alt="Tryumf logo">
+        <img class="img-fluid img-logo" id="logo" src="<?php echo $logo[0]; ?>" alt="Tryumf logo">
       </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
