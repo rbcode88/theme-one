@@ -11,12 +11,16 @@
 <div class="container-fluid mx-lg-0 px-0 ">
 
 <div class="sticky-lg-top text-center top-bar-info">
-  <ul>
-  <?php do_action( 'rbcode_before_header' ); ?><!--Top bar info -->
-    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Szybka-realizacja-biala.png" class="top-bar-icon" alt="Ikona ">EKSPRESOWA REALIZACJA</li>
-    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Indywidualny-projekt-biala.png" class="top-bar-icon" alt="Ikona ">DEDYKOWANY PROJEKT</li>
-    <li class=""><img src="http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/Fachowo-obsluga-klienta-biala.png" class="top-bar-icon" alt="Ikona ">FACHOWA POMOC I DORADZTWO</li>
-  </ul>
+ <ul>
+ <!--Top bar info -->
+  <?php do_action( 'rbcode_before_header' ); ?>
+</ul>
+
+  
+  
+  
+  
+ 
 </div>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">

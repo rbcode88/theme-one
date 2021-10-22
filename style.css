@@ -76,7 +76,7 @@ ul {
 }
 .top-bar-info ul{
     margin-bottom:0;
-    padding:5px 0;
+   
 }
 .top-bar-info ul li{
     color:#fff;
@@ -86,6 +86,7 @@ ul {
     list-style-type: none;
     padding:2px 15px;
     border-right:1px solid #fff;
+    margin:5px 0;
 }
 
 .top-bar-info ul li:last-child {
@@ -111,7 +112,7 @@ nav.white {
 }
 nav.navbar {
     padding:30px 0px;
-    margin-top:34px;
+    margin-top:33px;
 }
 nav.nav-shrink {
     padding:10px 0px;
