@@ -170,7 +170,6 @@ function rbcode_menus(){
   register_nav_menus($location);
 
 }
-
 add_action('init','rbcode_menus');
 
 
@@ -285,15 +284,16 @@ class Rbcode_TopBar {
             'priority'   => 10,
             'type'       => 'text'
             )));       
-  }
+}
 
 
-public static function inject_css()
+ public static function inject_css()
 {
     $background = get_option('rbcode_topbar_bgcolor');
     $textcolor = get_option('rbcode_topbar_textcolor');
     ?><style>
-        .top-bar-info{ background:<?php echo $background;?>; color:<?php echo $textcolor;?>;}
+        .top-bar-info{background:<?php echo $background;?>;}
+        .top-bar-info .carousel-item, .top-bar-info .carousel-item a{color:<?php echo $textcolor;?>!important;}
     </style><?php  
 }
 public static function top_bar_html( $wp_customize ){  
@@ -303,31 +303,108 @@ public static function top_bar_html( $wp_customize ){
     $text_two = get_option('rbcode_info_two');
     $text_three = get_option('rbcode_info_three');
  
+    if(!empty($phone) || !empty($text_one) || !empty($text_two) || !empty($text_three)) { ?>
+        
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+    <?php 
+
       if(!empty($phone)) { ?>
-        <li><a href="tel:+48<?php echo str_replace(' ','',$phone);?>" title="Kontakt"><?php echo $phone;?></a></li>  
+        <div class="carousel-item active" data-bs-interval="5000">
+          <a href="tel:+48<?php echo str_replace(' ','',$phone);?>" title="Kontakt"><?php echo $phone;?></a>
+        </div>
       <?php } 
       if(!empty($text_one)) { ?>
-        <li><?php echo $text_one;?></li> 
+        <div class="carousel-item" data-bs-interval="5000">
+          <?php echo $text_one;?>
+        </div>
       <?php } 
       if(!empty($text_two)) { ?>
-        <li><?php echo $text_two;?></li>  
+        <div class="carousel-item" data-bs-interval="3000">
+          <?php echo $text_two;?>
+        </div>
       <?php } 
       if(!empty($text_three)) { ?>
-        <li><?php echo $text_three;?></li>  
-      <?php } 
+        <div class="carousel-item" data-bs-interval="3000">
+          <?php echo $text_two;?>
+        </div>
+      <?php } ?>
+
+       </div>
+     </div>
+    <?php
+
+    }
+       
     }
 }
 
-add_action( 'customize_register' , array( 'Rbcode_TopBar' , 'register' ) );
+add_action('customize_register' , array( 'Rbcode_TopBar' , 'register' ));
 add_action('wp_head',array( 'Rbcode_TopBar' , 'inject_css' ));
 add_action('rbcode_before_header', array( 'Rbcode_TopBar' , 'top_bar_html' ));
 
 
+// Social icons 
+class Rbcode_Social {
+  public static function register_social ( $wp_customize ) {
+    $wp_customize->add_section('social-icons', 
+    array(
+         'title'      => __( 'Social Media', 'theme-one' ),
+         'priority'   => 30,
+    ));
 
+    $wp_customize->add_setting('rbcode_social_facebook',
+                array(
+                  'default'        => '',
+                  'capability'     => 'edit_theme_options',
+                  'type'           => 'option',
+                ));
+    $wp_customize->add_setting( 'rbcode_social_instagram', 
+                array(
+                  'default'        => '',
+                  'capability'     => 'edit_theme_options',
+                  'type'           => 'option',
+                ));
 
+    $wp_customize->add_control(
+      new WP_Customize_Control($wp_customize, 'rbcode_social_facebook',
+        array(
+            'label'      => __( 'Facebook page URL', 'theme-one' ),
+            'section'    => 'social-icons',
+            'settings'   => 'rbcode_social_facebook',
+            'priority'   => 10,
+            'type'       => 'text'
+             )));
+    $wp_customize->add_control( 
+      new WP_Customize_Control( $wp_customize, 'rbcode_social_instagram',
+        array(
+            'label'      => __( 'Instagram page URL', 'theme-one' ),
+            'section'    => 'social-icons',
+            'settings'   => 'rbcode_social_instagram',
+            'priority'   => 10,
+            'type'       => 'text'
+            )));      
+  }
 
+public static function rbcode_social_icons( $wp_customize ){  
 
+  $facebook = get_option('rbcode_social_facebook');
+  $instagram = get_option('rbcode_social_instagram');
 
+  if(!empty($facebook)) { ?>
+      
+      <a href="<?php echo $facebook; ?>" class="social-link"><img class="img-fluid social-icon instagram" src="http://localhost/wordpress-theme-one/wp-content/uploads/2021/10/facebook-circular-logo-2.png" alt="Facebook logo" target="_blank"></a>
+    <?php
+  }
+
+  if(!empty($instagram)) { ?>
+  <a href="<?php echo $instagram; ?>" class="social-link"><img class="img-fluid social-icon facebook" src="http://localhost/wordpress-theme-one/wp-content/uploads/2021/10/instagram-logo-2.png" alt="Instagram logo" target="_blank"></a>
+  <?php
+  }
+}
+}
+add_action( 'customize_register' , array( 'Rbcode_Social' , 'register_social' ));
+add_action('rbcode_social_icons', array( 'Rbcode_Social' , 'rbcode_social_icons' ));
 
 
 

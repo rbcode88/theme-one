@@ -74,25 +74,23 @@ ul {
     padding:0;
     margin:0;
 }
-.top-bar-info ul{
-    margin-bottom:0;
-   
-}
-.top-bar-info ul li{
+
+.top-bar-info .carousel-item {
     color:#fff;
     font-weight: 900;
     font-size: 0.8em;
-    display: inline-block;
-    list-style-type: none;
-    padding:2px 15px;
-    border-right:1px solid #fff;
-    margin:5px 0;
+    padding:7px 15px;
+    margin-bottom:0;
 }
 
-.top-bar-info ul li:last-child {
-    border:none;
+.top-bar-info a {
+    color:#fff;
+    text-decoration: none;
+    font-size: 1.22em;
 }
-
+.top-bar-info a:hover {
+    color:#333333;
+}
 img.top-bar-icon{
     width:20px;
     margin-right:10px;
@@ -107,15 +105,13 @@ nav, #logo {
 nav.white {
     background: #fff;
 }
-.navigation {
-    height: 35px;
-}
+
 nav.navbar {
     padding:30px 0px;
-    margin-top:33px;
+    margin-top:37px;
 }
 nav.nav-shrink {
-    padding:10px 0px;
+    padding:5px 0px;
 }
 
 .navbar-img-logo {
@@ -136,7 +132,14 @@ nav ul li.menu-item a:hover {
     color:#333333;
 }
 
-/* stroke */
+#main-menu ul li.menu-item{
+    text-align:center;
+}
+
+/***************
+ MENU ITEM UNDERSCORE
+ ***************/
+
   nav ul li a,
   nav ul li a:after,
   nav ul li a:before {
@@ -160,6 +163,22 @@ nav.stroke ul li a:after {
 }
 nav.stroke ul li a:hover:after {
   width: 100%;
+}
+
+/***************
+  MENU SOCIAL ICONS
+ ***************/
+img.social-icon {
+    margin:0 5px;
+    width:30px;
+}
+
+@media (max-width:991.98px) {
+    .social-menu-section{
+        display:block;
+        text-align: center;
+        
+    }
 }
 
 
