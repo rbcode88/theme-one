@@ -1,10 +1,9 @@
 
 <div class="container-fluid mx-0 px-0">
-<img class="img-fluid footer-background-image" src="<?php echo get_template_directory_uri() . '/images/footer-background.png';?>">
-  <!-- Footer -->
-  <footer class="text-center">
+  <img class="img-fluid footer-background-image" src="<?php echo get_template_directory_uri() . '/images/footer-background.png';?>">
 
-    <!-- Grid container -->
+  <!--=== Footer ===-->
+  <footer class="text-center">
     <div class="container footer-container  pb-0">
       <!-- Section: Links -->
       <section class="">
@@ -143,8 +142,6 @@
   <!-- Footer -->
 </div>
 <!-- End of .container -->
-
-
 
 
 <?php wp_footer(); ?>
