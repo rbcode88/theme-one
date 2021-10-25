@@ -311,7 +311,7 @@ public static function top_bar_html( $wp_customize ){
 
       if(!empty($phone)) { ?>
         <div class="carousel-item active" data-bs-interval="5000">
-          <a href="tel:+48<?php echo str_replace(' ','',$phone);?>" title="Kontakt"><?php echo $phone;?></a>
+          <img class="top-bar-icon" src="<?php echo get_template_directory_uri() . '/images/phone.png';?>"><a href="tel:+48<?php echo str_replace(' ','',$phone);?>" title="Kontakt"><?php echo $phone;?></a>
         </div>
       <?php } 
       if(!empty($text_one)) { ?>
@@ -326,7 +326,7 @@ public static function top_bar_html( $wp_customize ){
       <?php } 
       if(!empty($text_three)) { ?>
         <div class="carousel-item" data-bs-interval="3000">
-          <?php echo $text_two;?>
+          <?php echo $text_three;?>
         </div>
       <?php } ?>
 
@@ -405,7 +405,6 @@ public static function rbcode_social_icons( $wp_customize ){
 }
 add_action( 'customize_register' , array( 'Rbcode_Social' , 'register_social' ));
 add_action('rbcode_social_icons', array( 'Rbcode_Social' , 'rbcode_social_icons' ));
-
 
 
 
