@@ -11,9 +11,7 @@
         <div class="row">
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Company name
-            </h6>
+            <h6 class="text-uppercase mb-4 font-weight-bold">Tryumf</h6>
             <?php 
            if(function_exists('the_custom_logo')){ //Page logo 
              $custom_logo_id = get_theme_mod('custom_logo');
@@ -51,7 +49,7 @@
                 'walker' => new bootstrap_5_wp_nav_menu_walker()
             ));
             ?>
-            
+
           </div>
           <!--== Footer menu column end ==-->
 

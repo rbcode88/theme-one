@@ -393,12 +393,12 @@ public static function rbcode_social_icons( $wp_customize ){
 
   if(!empty($facebook)) { ?>
       
-      <a href="<?php echo $facebook; ?>" class="social-link"><img class="img-fluid social-icon instagram" src="http://localhost/wordpress-theme-one/wp-content/uploads/2021/10/facebook-circular-logo-2.png" alt="Facebook logo" target="_blank"></a>
+      <a href="<?php echo $facebook; ?>" class="social-link"><img class="img-fluid social-icon instagram" src="<?php echo get_template_directory_uri() . '/images/instagram.png';?>" alt="Facebook logo" target="_blank"></a>
     <?php
   }
 
   if(!empty($instagram)) { ?>
-  <a href="<?php echo $instagram; ?>" class="social-link"><img class="img-fluid social-icon facebook" src="http://localhost/wordpress-theme-one/wp-content/uploads/2021/10/instagram-logo-2.png" alt="Instagram logo" target="_blank"></a>
+  <a href="<?php echo $instagram; ?>" class="social-link"><img class="img-fluid social-icon facebook" src="<?php echo get_template_directory_uri() . '/images/facebook.png';?>" alt="Instagram logo" target="_blank"></a>
   <?php
   }
 }

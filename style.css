@@ -8,8 +8,8 @@
  */
 
 /***************
-  FONTS
- ***************/
+FONTS
+***************/
 @font-face {
     font-family: "MavenPro-Bold";
     font-display: swap;
@@ -66,8 +66,8 @@ ul {
     color:#777777;
 }
 /***************
- TOP BAR INFO
- ***************/
+TOP BAR INFO
+***************/
 .top-bar-info{
     width:100%;
     background-color: #e6005d;
@@ -97,8 +97,8 @@ img.top-bar-icon{
     margin-right:10px;
 }
 /***************
- TOP MENU
- ***************/
+TOP MENU
+***************/
 nav, #logo {
     transition: 1s;
 }
@@ -138,8 +138,8 @@ nav ul li.menu-item a:hover {
 }
 
 /***************
- MENU ITEM UNDERSCORE
- ***************/
+MENU ITEM UNDERSCORE
+***************/
 
   nav ul li a,
   nav ul li a:after,
@@ -167,8 +167,8 @@ nav.stroke ul li a:hover:after {
 }
 
 /***************
-  MENU SOCIAL ICONS
- ***************/
+MENU SOCIAL ICONS
+***************/
 img.social-icon {
     margin:0 5px;
     width:30px;
@@ -185,8 +185,8 @@ img.social-icon {
 
 
 /***************
-  HERO SECTION
- ***************/
+HERO SECTION
+***************/
 .image-main-menu{
     background-image: url("http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/270289_jesien_las_droga_samochod_ferrari_liscie.jpg");
 }
@@ -338,11 +338,8 @@ button.btn-custom:hover {
   }
 
 /***************
- FOOTER
- ***************/
- footer {
-     position: relative;
- }
+FOOTER
+***************/
 img.footer-background-image {
     background-position: center;
     background-repeat: no-repeat;
@@ -351,4 +348,17 @@ img.footer-background-image {
 footer {
     padding-top:30px;
     background-color:#000;
+}
+
+.white-custom-text, #menu-footer-menu li.menu-item a {
+    color:#fff;
+    text-decoration:none;
+}
+
+.white-custom-text:hover, #menu-footer-menu li.menu-item a:hover {
+    color:#e6005d;
+    transition: .5s;
+}
+.hr-line {
+    color:#fff;
 }

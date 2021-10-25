@@ -19,19 +19,19 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light stroke">
     <div class="container-fluid navigation">
-        <a class="navbar-brand navbar-img-logo" href="<?php echo get_home_url(); ?>">
-
+        
           <?php 
-           if(function_exists('the_custom_logo')){
+           if(function_exists('the_custom_logo')){ //Page logo 
              $custom_logo_id = get_theme_mod('custom_logo');
              $custom_logo_alt =  get_post_meta($custom_logo_id, '_wp_attachment_image_alt', true);
              $logo = wp_get_attachment_image_src($custom_logo_id);
-           }
-          
+             if($logo == true){
+              echo "<a class='navbar-brand navbar-img-logo' href=" . get_home_url() . ">";
+              echo "<img class='img-fluid img-logo' id='logo' src=" . $logo[0] . " alt=" . $custom_logo_alt . ">";
+              echo "</a>";
+              }
+            }    
           ?>
-
-        <img class="img-fluid img-logo" id="logo" src="<?php echo $logo[0]; ?>" alt="<?php echo $custom_logo_alt;?>">
-      </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
