@@ -189,6 +189,11 @@ HERO SECTION
 ***************/
 .image-main-menu{
     background-image: url("http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/270289_jesien_las_droga_samochod_ferrari_liscie.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-size:cover;
 }
  
 .main-menu-part {
@@ -350,6 +355,9 @@ footer {
     background-color:#000;
 }
 
+.img-footer-logo{
+    width:120px;
+}
 .white-custom-text, #menu-footer-menu li.menu-item a {
     color:#fff;
     text-decoration:none;
@@ -361,4 +369,7 @@ footer {
 }
 .hr-line {
     color:#fff;
+}
+#menu-footer-menu li.menu-item a.nav-link {
+    padding:0 0 .5rem 0;
 }

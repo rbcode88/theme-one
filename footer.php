@@ -1,7 +1,8 @@
 
 <div class="container-fluid mx-0 px-0">
-  <img class="img-fluid footer-background-image" src="<?php echo get_template_directory_uri() . '/images/footer-background.png';?>">
-
+  <div>
+    <img class="img-fluid footer-background-image" src="<?php echo get_template_directory_uri() . '/images/footer-background.png';?>">
+ </div>
   <!--=== Footer ===-->
   <footer class="text-center">
     <div class="container footer-container  pb-0">
@@ -10,8 +11,7 @@
         <!--Grid row-->
         <div class="row">
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Tryumf</h6>
+          <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
             <?php 
            if(function_exists('the_custom_logo')){ //Page logo 
              $custom_logo_id = get_theme_mod('custom_logo');
@@ -19,23 +19,27 @@
              $logo = wp_get_attachment_image_src($custom_logo_id);
 
              if($logo == true){
-             echo "<img class='img-fluid img-logo' id='logo' src=" . $logo[0] . " alt=" . $custom_logo_alt . ">";
+             echo "<div><img class='img-fluid img-footer-logo' id='logo' src=" . $logo[0] . " alt=" . $custom_logo_alt . " title='Logo'></div>";
              }
            }
           
-          ?> 
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
+            $name = get_bloginfo('name');
+              if(!empty($name)) {
+                echo "<p>" . $name . "</p>";
+              }
+
+            $description = get_bloginfo('description');
+              if(!empty($description)) {
+                echo "<p>" . $description . "</p>";
+              }
+            ?>
           </div>
           <!-- Grid column -->
 
-          <hr class="w-100 clearfix d-md-none" />
+          <hr class="w-100 clearfix d-md-none hr-line" />
 
           <!--== Footer menu column ==-->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Menu</h6>
 
             <?php
@@ -53,11 +57,11 @@
           </div>
           <!--== Footer menu column end ==-->
 
-          <hr class="w-100 clearfix d-md-none" />
+          <hr class="w-100 clearfix d-md-none hr-line" />
 
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold"></h6>
+          <!-- Grid column Do przemyslenia co tu wsadzic-->
+          <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Przydatne</h6>
             <p>
               <a class="white-custom-text">Your Account</a>
             </p>
@@ -73,12 +77,12 @@
           </div>
 
           <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none" />
+          <hr class="w-100 clearfix d-md-none hr-line" />
 
           <!--=== Contact column ===-->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Kontakt</h6>
-            <p><i class="fas fa-home mr-3"></i> Grabskiego 8, 37-450 Stalowa Wola</p>
+            <p><i class="fas fa-home mr-3"></i> Grabskiego 8<br>37-450 Stalowa Wola</p>
             <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
             <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
           </div>

@@ -365,7 +365,12 @@ class Rbcode_Social {
                   'capability'     => 'edit_theme_options',
                   'type'           => 'option',
                 ));
-
+    $wp_customize->add_setting( 'rbcode_social_google', 
+                array(
+                  'default'        => '',
+                  'capability'     => 'edit_theme_options',
+                  'type'           => 'option',
+                ));
     $wp_customize->add_control(
       new WP_Customize_Control($wp_customize, 'rbcode_social_facebook',
         array(
@@ -383,24 +388,40 @@ class Rbcode_Social {
             'settings'   => 'rbcode_social_instagram',
             'priority'   => 10,
             'type'       => 'text'
-            )));      
+            )));
+   $wp_customize->add_control( 
+      new WP_Customize_Control( $wp_customize, 'rbcode_social_google',
+        array(
+            'label'      => __( 'Google My Company URL', 'theme-one' ),
+            'section'    => 'social-icons',
+            'settings'   => 'rbcode_social_google',
+            'priority'   => 10,
+            'type'       => 'text'
+            )));       
   }
 
 public static function rbcode_social_icons( $wp_customize ){  
 
   $facebook = get_option('rbcode_social_facebook');
   $instagram = get_option('rbcode_social_instagram');
+  $google = get_option('rbcode_social_google');
 
   if(!empty($facebook)) { ?>
       
-      <a href="<?php echo $facebook; ?>" class="social-link"><img class="img-fluid social-icon instagram" src="<?php echo get_template_directory_uri() . '/images/instagram.png';?>" alt="Facebook logo" target="_blank"></a>
+      <a href="<?php echo $facebook; ?>" class="social-link" target="_blank"><img class="img-fluid social-icon instagram" src="<?php echo get_template_directory_uri() . '/images/instagram.png';?>" alt="Facebook logo" title="Facebook"></a>
     <?php
   }
 
   if(!empty($instagram)) { ?>
-  <a href="<?php echo $instagram; ?>" class="social-link"><img class="img-fluid social-icon facebook" src="<?php echo get_template_directory_uri() . '/images/facebook.png';?>" alt="Instagram logo" target="_blank"></a>
+  <a href="<?php echo $instagram; ?>" class="social-link" target="_blank"><img class="img-fluid social-icon facebook" src="<?php echo get_template_directory_uri() . '/images/facebook.png';?>" alt="Instagram logo" title="Instagram"></a>
   <?php
   }
+
+  if(!empty($google)) { ?>
+      
+    <a href="<?php echo $google; ?>" class="social-link" target="_blank"><img class="img-fluid social-icon google" src="<?php echo get_template_directory_uri() . '/images/google.png';?>" alt="Google logo" title="Google"></a>
+  <?php
+}
 }
 }
 add_action( 'customize_register' , array( 'Rbcode_Social' , 'register_social' ));

@@ -54,7 +54,7 @@
     </div>
 </div>
 
-<div class="container-fluid p-0 " style="height:700px;">
-    
+<div class="container p-0 " style="height:700px;">
+    <?php the_content(); ?>
 </div>
 <?php get_footer(); ?>

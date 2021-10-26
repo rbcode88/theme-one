@@ -1,6 +1,7 @@
 /* 
 Top menu scrolling effect. Adding custom classes and company logo width on scroll.
 */
+
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
         $('nav').addClass('white');
@@ -16,3 +17,14 @@ $(window).on("scroll", function () {
 
     }
 })
+
+/* 
+Main image paralax effect on scroll.
+*/
+var box = $(document),
+    bgAnimate = $('div.image-main-menu');
+
+box.on('scroll', function () {
+    var boxAnimate = box.scrollTop();
+    bgAnimate.css('background-position', '0' + -boxAnimate / 4 + 'px');
+});
