@@ -28,3 +28,8 @@ box.on('scroll', function () {
     var boxAnimate = box.scrollTop();
     bgAnimate.css('background-position', '0' + -boxAnimate / 4 + 'px');
 });
+
+/*
+Initialize Aos
+*/
+  AOS.init();

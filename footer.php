@@ -100,8 +100,8 @@
           <!-- Grid column -->
           <div class="col-md-7 col-lg-8 text-center text-md-start">
             <!--=== Copyright ===-->
-            <div class="p-3">
-             <p>Realizacja <a class="white-custom-text" href="https://rbcode.pl/" target="_blank" title="Strony internetowe i pozycjonowanie">Rbcode</a> 2021</p>
+            <div>
+             <p class="mb-0 copyright">Realizacja <a class="white-custom-text" href="https://rbcode.pl/" target="_blank" title="Strony internetowe i pozycjonowanie">Rbcode</a> 2021</p>
             </div>
             <!--=== Copyright ===-->
           </div>
@@ -123,7 +123,6 @@
   <!-- Footer -->
 </div>
 <!-- End of .container -->
-
 
 <?php wp_footer(); ?>
 

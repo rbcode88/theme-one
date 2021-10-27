@@ -7,6 +7,7 @@ function rbcode_register_styles() {
   wp_enqueue_style( 'rbcode-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(),'1.0', 'all' );
   wp_enqueue_style( 'rbcode-theme-style', get_template_directory_uri() . '/style.css', array( 'rbcode-bootstrap' ), $version, 'all' );
   wp_enqueue_style( 'rbcode-fontawasome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all' );
+  wp_enqueue_style( 'rbcode-aos', get_template_directory_uri() . '/css/aos.css', array(),'1.0', 'all' );
 
 }
 add_action( 'wp_enqueue_scripts', 'rbcode_register_styles' );
@@ -17,7 +18,9 @@ function rbcode_register_scripts() {
 
   wp_enqueue_script( 'rbcode-bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array(), '', true );
   wp_enqueue_script( 'rbcode-theme-script', get_template_directory_uri() . '/scripts.js', array('jquery'), '', true );
+  wp_enqueue_script( 'rbcode-aos-script', get_template_directory_uri() . '/js/aos.js', array('jquery'), '', false );
   wp_enqueue_script( 'rbcode-jquery-script', 'https://code.jquery.com/jquery-3.6.0.min.js', array('jquery'), '', false );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'rbcode_register_scripts' );
@@ -240,7 +243,7 @@ class Rbcode_TopBar {
             'settings'   => 'rbcode_topbar_textcolor',
             )));
     $wp_customize->add_control(
-      new WP_Customize_Color_Control($wp_customize,'rbcode_info_bar_phone',
+      new WP_Customize_Control($wp_customize,'rbcode_info_bar_phone',
         array(
             'label'      => __('Telefon', 'theme-one'),
             'section'    => 'top-bar-info',
@@ -249,7 +252,7 @@ class Rbcode_TopBar {
             'type'       => 'text'
             ))); 
     $wp_customize->add_control(
-      new WP_Customize_Color_Control($wp_customize,'rbcode_contact_mail',
+      new WP_Customize_Control($wp_customize,'rbcode_contact_mail',
         array(
             'label'      => __('E-mail', 'theme-one'),
             'section'    => 'top-bar-info',
@@ -258,7 +261,7 @@ class Rbcode_TopBar {
             'type'       => 'text'
             )));
     $wp_customize->add_control(
-      new WP_Customize_Color_Control($wp_customize,'rbcode_info_one',
+      new WP_Customize_Control($wp_customize,'rbcode_info_one',
         array(
             'label'      => __('Tekst 1', 'theme-one'),
             'section'    => 'top-bar-info',
@@ -267,7 +270,7 @@ class Rbcode_TopBar {
             'type'       => 'text'
             )));
     $wp_customize->add_control(
-      new WP_Customize_Color_Control($wp_customize,'rbcode_info_two',
+      new WP_Customize_Control($wp_customize,'rbcode_info_two',
         array(
             'label'      => __('Tekst 2', 'theme-one'),
             'section'    => 'top-bar-info',
@@ -276,7 +279,7 @@ class Rbcode_TopBar {
             'type'       => 'text'
            )));
     $wp_customize->add_control(
-      new WP_Customize_Color_Control($wp_customize,'rbcode_info_three',
+      new WP_Customize_Control($wp_customize,'rbcode_info_three',
         array(
             'label'      => __('Tekst 3', 'theme-one'),
             'section'    => 'top-bar-info',
