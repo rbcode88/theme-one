@@ -18,11 +18,11 @@ $(window).on("scroll", function () {
     }
 })
 
-/* 
+/*
 Main image paralax effect on scroll.
 */
 var box = $(document),
-    bgAnimate = $('div.image-main-menu');
+    bgAnimate = $('div.hero-image');
 
 box.on('scroll', function () {
     var boxAnimate = box.scrollTop();

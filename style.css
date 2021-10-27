@@ -187,7 +187,7 @@ img.social-icon {
 /***************
 HERO SECTION
 ***************/
-.image-main-menu{
+.hero-image{
     background-image: url("http://localhost/TROFEAKATALOGOWE/wp-content/uploads/2021/10/270289_jesien_las_droga_samochod_ferrari_liscie.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -195,14 +195,15 @@ HERO SECTION
     background-size: cover;
     -webkit-box-size:cover;
 }
+
  
-.main-menu-part {
+.hero-part-two {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, .7);
 }
 
-.main-menu-small-window {
+.hero-small-window {
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-top: none;
@@ -211,7 +212,12 @@ HERO SECTION
     text-align:center;
 }
 
-.main-menu-small-window h2.window-text-center {
+.hero-large-window{
+    position: relative;
+    text-align:center;
+}
+
+.hero-small-window h2.window-text-center, .hero-large-window h2.window-text-center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -222,28 +228,82 @@ HERO SECTION
     width:80%;
 }
 
-.main-menu-small-window button.btn-custom {
+
+.hero-small-window button.btn-custom, .hero-large-window button.btn-custom {
     position: absolute;
     top: 65%;
     right: 0;
     left: 0;
     z-index:99;
-    display:block;
     margin-left: auto; 
     margin-right: auto; 
-    width:200px;
-    color: #fff;
-    border: 1px solid #e6005d;
-    border-radius: 0;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-}
-button.btn-custom:hover {
-    background-color: #e6005d;
-    transform: scale(.95);
 }
 
-.main-menu-small-window i.window-icon-center {
+.btn-custom {
+    --offset: 10px;
+    --border-size: 2px;
+    display: block;
+    position: relative;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background 0.8s ease;
+    color:#fff;
+
+}
+.btn-custom:hover {
+    background: #e6005d;
+    color:#fff;
+}
+.button__horizontal, .button__vertical {
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    transition: transform 0.8s ease;
+    will-change: transform;
+}
+.button__horizontal::before, .button__vertical::before {
+    content: '';
+    position: absolute;
+    border: inherit;
+}
+.button__horizontal {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid #fff;
+    border-bottom: var(--border-size) solid #fff;
+}
+.button__horizontal::before {
+    top: calc(var(--vertical-offset) - var(--border-size));
+    bottom: calc(var(--vertical-offset) - var(--border-size));
+    left: calc(var(--vertical-offset) * -1);
+    right: calc(var(--vertical-offset) * -1);
+}
+.btn-custom:hover .button__horizontal {
+    transform: scaleX(0);
+}
+.button__vertical {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid #fff;
+    border-right: var(--border-size) solid #fff;
+}
+.button__vertical::before {
+    top: calc(var(--horizontal-offset) * -1);
+    bottom: calc(var(--horizontal-offset) * -1);
+    left: calc(var(--horizontal-offset) - var(--border-size));
+    right: calc(var(--horizontal-offset) - var(--border-size));
+}
+.btn-custom:hover .button__vertical {
+    transform: scaleY(0);
+}
+/* 
+.hero-small-window i.window-icon-center {
     position: absolute;
     top: 50%;
     right: 5%;
@@ -251,7 +311,7 @@ button.btn-custom:hover {
     color: #fff;
     font-size: 25px;
     z-index: 99;
-}
+} */
 
 .image-nav {
     width: 100%;
@@ -301,15 +361,15 @@ button.btn-custom:hover {
     height:100%;
   }
   
-  p.hero__heading {
+  /* p.hero__heading {
     margin: 0 0 10px 0;
     line-height: 30px;
     text-align:center;
     color: #fff;
     z-index: 99;
-  }
+  } */
 
-  .hero__btn {
+  /* .hero__btn {
     font-size: 64px;
     transition: 0.5s;
     color: #fff;
@@ -320,10 +380,10 @@ button.btn-custom:hover {
   
   .hero__btn:hover {
     color: #e6005d;
-  }
+  } */
   
   
-  @keyframes arrowMove {
+  /* @keyframes arrowMove {
     0% {
       top: 0px;
     }
@@ -331,7 +391,7 @@ button.btn-custom:hover {
     100% {
       top: -20px;
     }
-  }
+  } */
   
   @media (max-width:991.98px) {
     .main-menu-small-window {
