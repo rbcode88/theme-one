@@ -1,9 +1,5 @@
-<?php
+<?php get_header();?>
 
-get_header();
-
-?>
-<div class="container">
 <div class="row m-0">
   <div class="col-8 mx-auto">
     <div class="img-fluid featured-image"><?php the_post_thumbnail(); ?></div>
@@ -42,7 +38,4 @@ foreach($images as $image) { ?>
   </div>
 </div>
 
-<?php
-
-get_footer();
-?>
+<?php get_footer();?>

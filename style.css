@@ -185,8 +185,6 @@ img.social-icon {
     }
 }
 
-
-
 /***************
 HERO SECTION
 ***************/
@@ -243,43 +241,9 @@ HERO SECTION
     margin-right: auto;
     font-size:1.4rem;
 }
-
-@media only screen and (max-width: 995.98px) {
-    .hero-small-window {
-        height: 25vh;
-    }
-    .hero-large-window h2.window-text-center{
-      top:40%;  
-    }
-    .hero-small-window h2.window-text-center {
-        top:30%;
-    }
-    .hero-small-window button.btn-custom, .hero-large-window button.btn-custom {
-        top:50%;
-    }
-}
-@media only screen and (max-width: 767.98px) {
-    .hero{
-        height:50vh;
-    }
-    .hero-part-two{
-        height:50vh;
-    }
-    .hero-large-window{
-        height:60vh;
-    }
-    .hero-small-window {
-        height:25vh;
-    }
-    .btn-custom {
-        font-size:1rem;
-    }
-}
-
 .btn-custom {
     --offset: 10px;
     --border-size: 2px;
-    appearance: none;
     border: 0;
     background: transparent;
     outline: none;
@@ -291,6 +255,7 @@ HERO SECTION
     color:#fff;
 
 }
+
 .btn-custom:hover {
     background: #e6005d;
     color:#fff;
@@ -337,16 +302,38 @@ HERO SECTION
 .btn-custom:hover .button__vertical {
     transform: scaleY(0);
 }
-/* 
-.hero-small-window i.window-icon-center {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 25px;
-    z-index: 99;
-} */
+
+@media (max-width: 995.98px) {
+    .hero-small-window {
+        height: 25vh;
+    }
+    .hero-large-window h2.window-text-center{
+      top:40%;  
+    }
+    .hero-small-window h2.window-text-center {
+        top:30%;
+    }
+    .hero-small-window button.btn-custom, .hero-large-window button.btn-custom {
+        top:50%;
+    }
+}
+@media (max-width: 767.98px) {
+    .hero{
+        height:50vh;
+    }
+    .hero-part-two{
+        height:50vh;
+    }
+    .hero-large-window{
+        height:60vh;
+    }
+    .hero-small-window {
+        height:25vh;
+    }
+    .hero-small-window button.btn-custom, .hero-large-window button.btn-custom {
+        font-size:1rem;
+    }
+}
 
 .image-nav {
     width: 100%;
@@ -467,4 +454,111 @@ footer {
 }
 p.copyright {
     padding-top:6px;
+}
+
+@media (max-width:767.98px) {
+    p.copyright {
+        padding-bottom:6px;
+    }
+  }
+
+/***************
+SINGLE PAGE
+***************/
+.single-page-heading {
+    position:relative;
+    margin-top:430px;
+}
+
+.wp-block-cover_title {
+    position: absolute;
+    bottom: 0%;
+    left: 14%;
+    width:300px;
+    color: #fff;
+    z-index: 99;
+    text-align: left;
+    margin-bottom:0;
+    font-size:100px;
+    text-transform: uppercase;
+    line-height:70px;
+}
+.wp-block-cover_title::after {
+    content: attr(data-title);
+    text-align:left;
+    position: absolute;
+    opacity: .2;
+    font-size: 120px;
+    line-height:80px;
+    top: -42px;
+    left: 0px;
+}
+
+.hero-page-image {
+    position:fixed;
+    z-index:-1;
+    padding-bottom:0;
+}
+.single-page-content p {
+    background-color: #fff;
+    margin-bottom:0px;
+    padding:0 15% 0 15%;
+}
+
+p.wp-block_text{ 
+    padding-top:80px;
+}
+
+@media (max-width:1199.98px){
+.wp-block-cover_title{
+    font-size:85px;
+    line-height:50px;
+}
+.wp-block-cover_title::after{
+    font-size:105px;
+    line-height:70px;
+}
+}
+
+@media (max-width:991.98px){
+    .wp-block-cover_title{
+        font-size:65px;
+        line-height:45px;
+    }
+    .wp-block-cover_title::after{
+        font-size:75px;
+        line-height:60px;
+    }
+}
+    
+@media (max-width:767.98px){
+    .wp-block-cover_title{
+        font-size:45px;
+        line-height:32px;
+        left: 7%;
+    }
+    .wp-block-cover_title::after{
+        font-size:55px;
+        line-height:45px;
+        top: -30px;
+    }
+    .single-page-content p {
+        padding:0 7% 0 7%;
+    }
+    
+    p.wp-block_text{ 
+        padding-top:7%;
+    }
+}
+
+@media (max-width:575.98px){
+    .wp-block-cover_title{
+        font-size:35px;
+        line-height:25px;
+    }
+    .wp-block-cover_title::after{
+        font-size:45px;
+        line-height:35px;
+        top: -20px;
+    }
 }
