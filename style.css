@@ -169,6 +169,9 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+.navbar-light .navbar-nav .nav-link.active {
+    color:#e6005d;
+}
 /***************
 MENU SOCIAL ICONS
 ***************/
