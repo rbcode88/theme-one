@@ -96,6 +96,9 @@ img.top-bar-icon{
     width:20px;
     margin-right:10px;
 }
+.top-bar-info .carousel-item {
+    height:35px;
+}
 /***************
 TOP MENU
 ***************/
@@ -109,7 +112,7 @@ nav.white {
 
 nav.navbar {
     padding:30px 0px;
-    margin-top:36px;
+    margin-top:35px;
 }
 nav.nav-shrink {
     padding:5px 0px;
@@ -127,6 +130,7 @@ nav ul li.menu-item a {
     color:#777777;
     font-weight: 900;
     position:relative;
+    font-size:1.2rem;
 }
 
 nav ul li.menu-item a:hover {
@@ -242,7 +246,9 @@ HERO SECTION
     display:block;
     margin-left: auto; 
     margin-right: auto;
+    text-align: center;
     font-size:1.4rem;
+    max-width:173.7px;
 }
 .btn-custom {
     --offset: 10px;
@@ -468,16 +474,19 @@ p.copyright {
 /***************
 SINGLE PAGE
 ***************/
+.single-page-content {
+    margin-top:430px;
+    background-color: #fff;
+}
 .single-page-heading {
     position:relative;
-    margin-top:430px;
 }
 
 .wp-block-cover_title {
     position: absolute;
     bottom: 0%;
-    left: 14%;
-    width:300px;
+    left: 5%;
+    width:500px;
     color: #fff;
     z-index: 99;
     text-align: left;
@@ -496,16 +505,25 @@ SINGLE PAGE
     top: -42px;
     left: 0px;
 }
-
-.hero-page-image {
+.page-featured-image {
     position:fixed;
     z-index:-1;
-    padding-bottom:0;
+    height:430px;
+    width:100%;
+
 }
+.page-featured-image img {
+    width: 100%;
+    height:430px;
+    background-position: center;
+    background-repeat: no-repeat;  
+    object-fit: cover;
+}
+
 .single-page-content p {
     background-color: #fff;
     margin-bottom:0px;
-    padding:0 15% 0 15%;
+    padding:0 5% 0 5%;
 }
 
 p.wp-block_text{ 
@@ -538,7 +556,7 @@ p.wp-block_text{
     .wp-block-cover_title{
         font-size:45px;
         line-height:32px;
-        left: 7%;
+        left: 5%;
     }
     .wp-block-cover_title::after{
         font-size:55px;
@@ -546,11 +564,11 @@ p.wp-block_text{
         top: -30px;
     }
     .single-page-content p {
-        padding:0 7% 0 7%;
+        padding:0 5% 0 5%;
     }
     
     p.wp-block_text{ 
-        padding-top:7%;
+        padding-top:5%;
     }
 }
 

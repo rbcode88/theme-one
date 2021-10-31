@@ -29,13 +29,13 @@ box.on('scroll', function () {
     bgAnimate.css('background-position', '0' + -boxAnimate / 4 + 'px');
 });
 
-var boxOne = $(document),
-    bgAnimateOne = $('div.hero-page-image');
+// var boxOne = $(document),
+//     bgAnimateOne = $('div.page-featured-image');
 
-boxOne.on('scroll', function () {
-    var boxAnimateOne = boxOne.scrollTop();
-    bgAnimateOne.css('background-position', '0' + -boxAnimate / 4 + 'px');
-});
+// boxOne.on('scroll', function () {
+//     var boxAnimateOne = boxOne.scrollTop();
+//     bgAnimateOne.css('background-position', '0' + -boxAnimateOne / 4 + 'px');
+// });
 
 
 /*

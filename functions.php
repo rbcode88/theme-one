@@ -148,7 +148,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 
     $active_class = ($item->current || $item->current_item_ancestor || in_array("current_page_parent", $item->classes, true) || in_array("current-post-ancestor", $item->classes, true)) ? 'active' : '';
     $nav_link_class = ( $depth > 0 ) ? 'dropdown-item ' : 'nav-link ';
-    $attributes .= ( $args->walker->has_children ) ? ' class="'. $nav_link_class . $active_class . ' dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="'. $nav_link_class . $active_class . '"';
+    $attributes .= ( $args->walker->has_children ) ? ' class="'. $nav_link_class . $active_class . ' dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="font-maven '. $nav_link_class . $active_class . '"';
 
     $item_output = $args->before;
     $item_output .= '<a' . $attributes . '>';
@@ -314,7 +314,7 @@ public static function top_bar_html( $wp_customize ){
 
       if(!empty($phone)) { ?>
         <div class="carousel-item active" data-bs-interval="5000">
-          <img class="top-bar-icon" src="<?php echo get_template_directory_uri() . '/images/phone.png';?>"><a href="tel:+48<?php echo str_replace(' ','',$phone);?>" title="Kontakt"><?php echo $phone;?></a>
+          <img class="top-bar-icon" src="<?php echo get_template_directory_uri() . '/images/phone.png';?>"><?php echo $phone;?>
         </div>
       <?php } 
       if(!empty($text_one)) { ?>
