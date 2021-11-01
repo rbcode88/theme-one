@@ -243,14 +243,14 @@ HERO SECTION
     right: 0;
     left: 0;
     z-index:99;
-    display:block;
     margin-left: auto; 
     margin-right: auto;
     text-align: center;
     font-size:1.4rem;
-    max-width:173.7px;
+    max-width:180px;
 }
 .btn-custom {
+    max-width:180px;
     --offset: 10px;
     --border-size: 2px;
     border: 0;
