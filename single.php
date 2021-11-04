@@ -27,11 +27,11 @@
     echo wp_get_attachment_image_src($image->ID,'full')[0];
     ?>
 
-<?php 
-$images = get_attached_media('image', $post->ID);
-foreach($images as $image) { ?>
-    <img src="<?php echo wp_get_attachment_image_src($image->ID,'full'); ?>" />
-<?php } ?>
+    <?php 
+    $images = get_attached_media('image', $post->ID);
+    foreach($images as $image) { ?>
+        <img src="<?php echo wp_get_attachment_image_src($image->ID,'full'); ?>" />
+    <?php } ?>
 
 
 

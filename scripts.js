@@ -42,3 +42,13 @@ box.on('scroll', function () {
 Initialize Aos
 */
 AOS.init();
+
+
+/*
+test*/
+
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+});
