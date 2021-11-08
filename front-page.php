@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container-fluid p-0 hero-image">
+<div class="p-0 hero-image">
     <div class="row m-0">
     <!-- order-md-first order-last  order-md-last order-first-->
         <div class="col-lg-5 col-md-6 p-0 ">
@@ -70,10 +70,9 @@
     </div>
 </div>
 
+
 <div class="container p-0 " style="height:700px;">
-
-
-
     <?php the_content(); ?>
 </div>
+
 <?php get_footer(); ?>

@@ -123,7 +123,8 @@
   <!-- Footer -->
 </div>
 <!-- End of .container -->
-
+</div> <!--=== Content End ===-->
+</div> <!--=== Whole Page End ===-->
 <?php wp_footer(); ?>
 
 </body>
