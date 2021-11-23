@@ -23,7 +23,7 @@
             <div class="row m-0 hero-part-two">
                 <div class="col-lg-6 col-md-12 col-6 p-0 hero-small-window" data-aos="zoom-out" data-aos-delay="100">
                     <a href="<?php echo get_site_url()."/dyplomy-drewniane"; ?>">
-                        <h2 class="window-text-center">DYPLOMY</h2>
+                        <h2 class="window-text-center">BIZNES</h2>
                         <div class="window-button-center"><button type="button" class="btn btn-custom">Zobacz więcej
                             <div class="button__horizontal"></div>
 	                        <div class="button__vertical"></div>
@@ -34,7 +34,7 @@
 
                 <div class=" col-lg-6 col-md-12 col-6 p-0 hero-small-window" data-aos="zoom-out" data-aos-delay="200">
                     <a href="<?php echo get_site_url()."/statuetki-szklane"; ?>">
-                        <h2 class="window-text-center">SZKŁA</h2>
+                        <h2 class="window-text-center">SPORT</h2>
                         <div class="window-button-center"><button type="button" class="btn btn-custom">Zobacz więcej
                             <div class="button__horizontal"></div>
 	                        <div class="button__vertical"></div>
@@ -46,7 +46,7 @@
                 
                 <div class=" col-lg-6 col-md-12 col-6 p-0 hero-small-window" data-aos="zoom-out" data-aos-delay="300">
                     <a href="<?php echo get_site_url()."/trofea-z-pleksy"; ?>">
-                        <h2 class="window-text-center">TROFEA Z PLEKSY</h2>
+                        <h2 class="window-text-center">OKOLICZNOŚCIOWE</h2>
                         <div class="window-button-center"><button type="button" class="btn btn-custom">Zobacz więcej
                             <div class="button__horizontal"></div>
 	                        <div class="button__vertical"></div>
@@ -57,7 +57,7 @@
 
                 <div class=" col-lg-6 col-md-12 col-6 p-0 hero-small-window" data-aos="zoom-out" data-aos-delay="400">
                     <a href="<?php echo get_site_url()."/v-line-custom"; ?>">
-                        <h2 class="window-text-center">V-LINE CUSTOM</h2>
+                        <h2 class="window-text-center">ZESTAWY</h2>
                         <div class="window-button-center"><button type="button" class="btn btn-custom">Zobacz więcej
                             <div class="button__horizontal"></div>
 	                        <div class="button__vertical"></div>
@@ -72,7 +72,7 @@
 
 
 <div class="container p-0 " style="height:700px;">
-    <?php the_content(); ?>
+    <?php the_content(); echo "test";?>
 </div>
 
 <?php get_footer(); ?>
