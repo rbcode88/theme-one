@@ -72,7 +72,7 @@
 
 
 <div class="container p-0 " style="height:700px;">
-    <?php the_content(); echo "test";?>
+    <?php the_content(); ?>
 </div>
 
 <?php get_footer(); ?>
